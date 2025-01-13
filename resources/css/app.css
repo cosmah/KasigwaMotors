@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Base Styles */
+header {
+    color: #cc5500;
+    padding: 20px 10px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap for small screens */
+    align-items: center; /* Centers logo and links vertically */
+    justify-content: space-between; /* Spreads logo and links apart */
+    padding: 10px 0;
+}
+
+/* Logo Styling */
+nav div img {
+    max-height: 150px; /* Logo height constraint */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Links Styling */
+nav .links {
+    display: flex;
+    gap: 15px; /* Spacing between links */
+    flex-wrap: wrap; /* Wrap links for smaller screens */
+    align-items: center;
+}
+
+nav a {
+    color: #cc5500;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack logo and links vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    nav div img {
+        max-height: 150px; /* Smaller logo for tablets */
+    }
+
+    nav .links {
+        gap: 10px; /* Reduce spacing */
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+    nav .links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 8px; /* Reduce spacing further */
+    }
+
+    nav a {
+        font-size: 14px; /* Reduce link size */
+    }
+
+    nav div img {
+        max-height: 40px; /* Further reduce logo size */
+    }
+}
