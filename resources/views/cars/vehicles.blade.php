@@ -43,6 +43,13 @@
                                             {{ __('Edit') }}
 
                                         </x-dropdown-link>
+                                        <form method="POST" action="{{ route('cars.destroy', $car)}}">
+                                            @csrf
+                                            @method('delete')
+                                            <x-dropdown-link :href="route('cars.destroy', $car)" onclick="event.preventDefault(); this.closest('form').submit();">
+                                               {{ __('Delete') }} 
+                                            </x-dropdown-link>
+                                        </form>
 
                                     </x-slot>
 
@@ -51,11 +58,13 @@
                             @endif
                     </div>
                     @if($car->images)
-                        <div class="grid grid-cols-3 gap-4 mt-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
                             @foreach($car->images as $imagePath)
-                                <img src="{{ asset('storage/' . $imagePath) }}" 
-                                    alt="Car Image" 
-                                    class="rounded-lg w-full h-48 object-cover">
+                                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                                    <img src="{{ asset('storage/' . $imagePath) }}" 
+                                        alt="Car Image" 
+                                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out transform hover:scale-105">
+                                </div>
                             @endforeach
                         </div>
                     @endif

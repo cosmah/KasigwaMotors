@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::resource('cars', CarController::class)
-    ->only(['index', 'store', 'edit', 'update'])
+    ->only(['index', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 Route::get('/cars/vehicles', [

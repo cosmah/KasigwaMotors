@@ -130,8 +130,13 @@ class CarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Car $car)
+    public function destroy(Car $car): RedirectResponse
     {
         //
+        Gate::authorize('delete', $car);
+
+        $car->delete();
+
+        return redirect(route('cars.index'));
     }
 }
