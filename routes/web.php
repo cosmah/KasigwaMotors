@@ -4,9 +4,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\View;
+use App\Models\Car;
+
+
 
 Route::get('/', function () {
-    return view('welcome');
+    $cars = Car::all();
+    return view('welcome', ['cars' => $cars]);
 });
 
 Route::get('/hire', function () {
