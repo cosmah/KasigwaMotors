@@ -18,6 +18,10 @@ Route::get('/list', function(){
     return view('list', ['cars' => $cars]);
 });
 
+Route::get('/cars/{id}', 
+[CarController::class, 'details'])->name('details');
+
+
 Route::get('/hire', function () {
     return view('hire');
 });

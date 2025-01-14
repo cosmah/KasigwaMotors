@@ -28,6 +28,15 @@ class CarController extends Controller
         ]);
     }
 
+      /**
+     * Display the specified resource.
+     */
+    public function details($id)
+    {
+        $car = Car::findOrFail($id);
+        return view('details', compact('car'));
+    }
+   
 
 
 
@@ -74,10 +83,13 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Car $car)
+    public function show(Car $car): View
     {
-        //
+        return view('cars.show', [
+            'car' => $car,
+        ]);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
