@@ -139,6 +139,11 @@
 
     </div>
 
+    <div class="whatsapp fixed bottom-4 right-4 z-50">
+        <a href="https://wa.me/256783299472" target="_blank">
+            <img src="images/whatsapp.svg" alt="Whatsapp Logo" class="w-16 h-14 shadow-lg rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110">
+        </a>
+    </div>
     <div class="footer bg-gray-900 text-white py-8">
         <footer class="container mx-auto px-4">
             <div class="flex flex-wrap justify-between">

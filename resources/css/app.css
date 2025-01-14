@@ -335,3 +335,10 @@ h2 {
     }
 }
 
+.whatsapp img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp img:hover {
+    transform: scale(1.1);
+}
