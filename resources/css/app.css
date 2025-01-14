@@ -73,12 +73,25 @@ nav a:hover {
     width: 100%;
 }
 
+/* =========hero section start=============== */
 .intro {
-    background-color: #cc5500;
-    color: white;
-    padding: 2rem;
+    position: relative;
+    width: 100vw; /* Full width of the viewport */
+    height: 78vh; /* Full height of the viewport */
+    background-image: url("../images/benz.svg"); /* Path to the SVG */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Ensures the image covers the entire section */
+    color: rgb(250, 140, 15); /* Optional, for text styling */
     text-align: center;
+    text-shadow: 
+        2px 2px 0 black,  /* Shadow right and down */
+        -2px 2px 0 black, /* Shadow left and down */
+        2px -2px 0 black, /* Shadow right and up */
+        -2px -2px 0 black; /* Shadow left and up */
 }
+
+
 
 /* Default (Mobile First) */
 .intro h1 {
@@ -96,6 +109,13 @@ nav a:hover {
 .intro p strong {
     font-size: 1.125rem;
 }
+
+.intro img {
+    width: 200px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
 
 /* Medium devices (tablets) */
 @media (min-width: 768px) {
@@ -134,3 +154,5 @@ nav a:hover {
         font-size: 1.375rem;
     }
 }
+
+/* =========hero section end=============== */

@@ -55,6 +55,7 @@
             </div>
         </header>
         <div class="intro">
+            {{-- <img src="images/benz.svg" alt="Kasigwa Motors Logo"> --}}
             <h1>Kasigwa Motors Ug. SMC Ltd</h1>
             <p>Your Trusted Partner in Car Sales and Hiring</p>
             <p><strong>Walk In, Drive Out</strong></p>
