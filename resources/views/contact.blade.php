@@ -47,11 +47,11 @@
 
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden md:hidden px-4 py-2">
-                <a href="#/" class="nav-link active block py-2 hover:text-gray-700">Home</a>
-                <a href="#cars" class="nav-link block py-2 hover:text-gray-700">Cars for Sale</a>
-                <a href="#hire" class="nav-link block py-2 hover:text-gray-700">Hire a Car</a>
-                <a href="#testimonials" class="nav-link block py-2 hover:text-gray-700">About Us</a>
-                <a href="#contact" class="nav-link block py-2 hover:text-gray-700">Contact Us</a>
+                <a href="/" class="nav-link active block py-2 hover:text-gray-700">Home</a>
+                <a href="/sales" class="nav-link block py-2 hover:text-gray-700">Cars for Sale</a>
+                <a href="/hire" class="nav-link block py-2 hover:text-gray-700">Hire a Car</a>
+                <a href="/about" class="nav-link block py-2 hover:text-gray-700">About Us</a>
+                <a href="/contact" class="nav-link block py-2 hover:text-gray-700">Contact Us</a>
             </div>
         </header>
 
