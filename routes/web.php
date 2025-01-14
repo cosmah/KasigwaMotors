@@ -13,12 +13,18 @@ Route::get('/', function () {
     return view('welcome', ['cars' => $cars]);
 });
 
+Route::get('/list', function(){
+    $cars = Car::all();
+    return view('list', ['cars' => $cars]);
+});
+
 Route::get('/hire', function () {
     return view('hire');
 });
 
 Route::get('/sales', function(){
-    return view('sales');
+    $cars = Car::all();
+    return view('sales', ['cars' => $cars]);
 });
 
 Route::get('/about', function (){
