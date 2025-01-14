@@ -264,3 +264,73 @@ h2 {
 .header{
     text-align: center;
 }
+.button {
+    background-color: #f55810;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+/* ========emphasis========= */
+.emphasis {
+    position: relative;
+    width: 100vw; /* Full width of the viewport */
+    height: 60vh; /* Full height of the viewport */
+    background-image: url("../images/bg.svg"); /* Path to the SVG */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Ensures the image covers the entire section */
+    color: rgb(253, 253, 253); /* Optional, for text styling */
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.emphasis::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    z-index: 1;
+}
+
+.emphasis .text {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+    padding-top: 4rem;
+}
+
+#h2 {
+    color: #f55810;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .emphasis {
+        height: 40vh; /* Adjust height for smaller screens */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .emphasis .text {
+        padding-top: 2rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .emphasis {
+        height: 30vh; /* Adjust height for very small screens */
+        font-size: 1rem; /* Adjust font size for very small screens */
+    }
+
+    .emphasis .text {
+        padding-top: 1rem; /* Adjust padding for very small screens */
+    }
+}

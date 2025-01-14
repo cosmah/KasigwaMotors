@@ -20,34 +20,34 @@
 
 <body class="font-sans antialiased">
     <div class="topnav">
-        
-            <div class="flex justify-center">
-                <!-- This can be your logo or brand name -->
-                <img src="path_to_logo.png" alt="Kasigwa Motors Logo" class="h-auto">
-            </div>
-    
-            @if (Route::has('login'))
-                <nav class="flex justify-end ">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-black">
-                            Dashboard
+
+        <div class="flex justify-center">
+            <!-- This can be your logo or brand name -->
+            <img src="path_to_logo.png" alt="Kasigwa Motors Logo" class="h-auto">
+        </div>
+
+        @if (Route::has('login'))
+            <nav class="flex justify-end ">
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="text-black">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="text-black">
+                        Log in
+                    </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-black">
+                            Register
                         </a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-black">
-                            Log in
-                        </a>
-    
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="text-black">
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
-        
+                    @endif
+                @endauth
+            </nav>
+        @endif
+
     </div>
-    
+
     <header class="bg-white">
         <nav class="flex justify-between items-center w-full px-4">
             <!-- Logo -->
@@ -67,8 +67,7 @@
             <!-- Mobile Menu Button -->
             <button id="menuButton" class="block md:hidden text-orange-700">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </nav>
@@ -106,10 +105,10 @@
             <div class="header">
                 <h2>Featured Cars</h2>
             </div>
-            <div class="mt-6 bg-white shadow-sm rounded-lg divide-y grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div
+                class="mt-6 bg-white shadow-sm rounded-lg divide-y grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 @foreach ($cars->take(9) as $car)
-                    <a href="{{ route('cars.vehicles', $car->id) }}"
-                        class="block p-6 flex space-x-2 hover:bg-gray-50">
+                    <a href="{{ route('cars.vehicles', $car->id) }}" class="block p-6 flex space-x-2 hover:bg-gray-50">
                         <div class="flex-1">
                             @if ($car->images)
                                 <div class="relative overflow-hidden rounded-lg shadow-lg">
@@ -124,8 +123,21 @@
                     </a>
                 @endforeach
             </div>
+            <div class="btn-1">
+                <a href="/sales" class="button">View More Cars</a>
+            </div>
         </div>
+
     </main>
+    <div class="emphasis">
+        <div class="text">
+            <h2 id="h2">Why Choose Us?</h2>
+            <p>At Kasigwa Motors, we offer the best deals on new and used cars. We also have a wide range of cars for
+                hire.</p>
+            <p>Our cars are well maintained and serviced regularly to ensure that you have a smooth ride.</p>
+        </div>
+
+    </div>
 </body>
 
 </html>
