@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Base Styles */
 header {
     color: #cc5500;
-    padding: 20px 10px;
+    padding: 2px 10px;
 }
 
 nav {
@@ -14,7 +13,7 @@ nav {
     flex-wrap: wrap; /* Allows items to wrap for small screens */
     align-items: center; /* Centers logo and links vertically */
     justify-content: space-between; /* Spreads logo and links apart */
-    padding: 10px 0;
+    padding: 0px 0;
 }
 
 /* Logo Styling */
@@ -51,7 +50,7 @@ nav a:hover {
 }
 
 .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 2px;
@@ -72,4 +71,66 @@ nav a:hover {
 
 .nav-link.active::after {
     width: 100%;
+}
+
+.intro {
+    background-color: #cc5500;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Default (Mobile First) */
+.intro h1 {
+    color: rgb(255, 255, 255);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro p strong {
+    font-size: 1.125rem;
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+    .intro {
+        padding: 2.5rem;
+    }
+    
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+    
+    .intro p {
+        font-size: 1.125rem;
+    }
+    
+    .intro p strong {
+        font-size: 1.25rem;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+    .intro {
+        padding: 3rem;
+    }
+    
+    .intro h1 {
+        font-size: 3rem;
+    }
+    
+    .intro p {
+        font-size: 1.25rem;
+    }
+    
+    .intro p strong {
+        font-size: 1.375rem;
+    }
 }

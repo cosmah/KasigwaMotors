@@ -54,19 +54,22 @@
                 <a href="/contact" class="nav-link block py-2 hover:text-gray-700">Contact Us</a>
             </div>
         </header>
+        <div class="intro">
+            <h1>Kasigwa Motors Ug. SMC Ltd</h1>
+            <p>Your Trusted Partner in Car Sales and Hiring</p>
+            <p><strong>Walk In, Drive Out</strong></p>
+        </div>
 
 
 
         <main class="mt-6">
 
         </main>
-        <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-            Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-        </footer>
+
     </div>
 
 
-    <
+
 </body>
 
 </html>
