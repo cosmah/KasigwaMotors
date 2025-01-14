@@ -72,6 +72,34 @@ nav a:hover {
 .nav-link.active::after {
     width: 100%;
 }
+/* =====top nav===== */
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #110606;
+    height: 50px; /* Ensure the height is enough */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content:flex-end /* Center horizontally */
+}
+
+.topnav a {
+    color: #e6e3e3;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px; /* Add reasonable space between links */
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #074a88;
+    color: rgb(245, 184, 184);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
 
 /* =========hero section start=============== */
 .intro {
