@@ -103,6 +103,13 @@
                         </p>
                     </div>
                 </div>
+                <div class="">
+                    <div class="btn-2">
+                        <a href="/sales" class="button">View More Cars</a>
+                        <a href="/book" class="button">Buy This Car</a>
+                        <a href="/hire-car" class="button">Hire This Car</a>
+                    </div>
+                </div>
             </div>
         </main>
         

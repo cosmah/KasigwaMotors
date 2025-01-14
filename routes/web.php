@@ -23,7 +23,12 @@ Route::get('/cars/{id}',
 
 
 Route::get('/hire', function () {
-    return view('hire');
+    $cars = Car::all();
+    return view('hire', ['cars' => $cars]);
+});
+
+Route::get('/book', function(){
+    return view('book');
 });
 
 Route::get('/sales', function(){
@@ -37,6 +42,10 @@ Route::get('/about', function (){
 
 Route::get('/contact', function(){
     return view('contact');
+});
+
+Route::get('/hire-car', function(){
+    return view('hirecar');
 });
 
 Route::get('/dashboard', function () {
