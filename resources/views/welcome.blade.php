@@ -60,6 +60,21 @@
             <p>Your Trusted Partner in Car Sales and Hiring</p>
             <p><strong>Walk In, Drive Out</strong></p>
         </div>
+        <div>
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service">
+
+                    <h3>Car Sales</h3>
+                    <p>Get the best deals on new and used cars</p>
+                </div>
+                <div class="service">
+
+                    <h3>Car Hire</h3>
+                    <p>Get the best deals on car hire</p>
+                </div>
+            </div>
+        </div>
 
 
 
