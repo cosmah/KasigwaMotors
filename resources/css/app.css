@@ -43,37 +43,3 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
-
-/* Medium Screens (Tablets) */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack logo and links vertically */
-        align-items: center;
-        text-align: center;
-    }
-
-    nav div img {
-        max-height: 150px; /* Smaller logo for tablets */
-    }
-
-    nav .links {
-        gap: 10px; /* Reduce spacing */
-    }
-}
-
-/* Small Screens (Mobile) */
-@media (max-width: 480px) {
-    nav .links {
-        flex-direction: column; /* Stack links vertically */
-        gap: 8px; /* Reduce spacing further */
-    }
-
-    nav a {
-        font-size: 14px; /* Reduce link size */
-    }
-
-    nav div img {
-        max-height: 40px; /* Further reduce logo size */
-    }
-}
