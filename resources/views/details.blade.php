@@ -93,12 +93,12 @@
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
                             <img src="{{ asset('images/fuel.svg') }} " class="w-8 h-auto mr-2" />
-                            {{ $car->description }}
+                            {{ $car->fuel }}
 
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
                             <img src="{{ asset('images/mile.svg') }} " class="w-8 h-auto mr-2" />
-                            {{ $car->description }}
+                            {{ $car->mileage }}
 
                         </p>
                     </div>
@@ -109,7 +109,7 @@
                         @if (Route::has('login'))
                             @auth
                                 <!-- Authenticated User: Show the "Buy This Car" button -->
-                                <a href="/purchase" class="button">Buy This Car</a>
+                                <a href="{{ route('purchase', ['id' => $car->id]) }}" class="button">Buy This Car</a>
                             @else
                                 <!-- Guest User: Redirect to Login Page -->
                                 <a href="{{ route('login') }}" class="button">

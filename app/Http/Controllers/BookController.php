@@ -5,6 +5,7 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Models\Car;
 
 class BookController extends Controller
 {
@@ -74,4 +75,13 @@ class BookController extends Controller
     {
         //
     }
+
+    public function showPurchaseForm($id)
+    {
+        $car = Car::findOrFail($id);
+        return view('purchase', compact('car'));
+    }
+
+
+
 }

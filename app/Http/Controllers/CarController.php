@@ -16,19 +16,19 @@ class CarController extends Controller
      */
     public function index(): View
     {
-        return view('cars.index',[
+        return view('cars.index', [
             'cars' => Car::with('user')->latest()->get(),
         ]);
     }
 
     public function vehicles(): View
     {
-        return view('cars.vehicles',[
+        return view('cars.vehicles', [
             'cars' => Car::with('user')->latest()->get(),
         ]);
     }
 
-      /**
+    /**
      * Display the specified resource.
      */
     public function details($id)
@@ -36,7 +36,12 @@ class CarController extends Controller
         $car = Car::findOrFail($id);
         return view('details', compact('car'));
     }
-   
+
+    public function showPurchaseForm($id)
+    {
+        $car = Car::findOrFail($id);
+        return view('purchase', compact('car'));
+    }
 
 
 
@@ -52,33 +57,33 @@ class CarController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request): RedirectResponse
-{
-    $validated = $request->validate([
-        'car_model' => 'required|string|max:255',
-        'car_make' => 'required|string|max:255',
-        'year' => 'required|integer|min:1900|max:2024',
-        'images' => 'required|array|min:1|max:5',
-        'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
-    ]);
+    {
+        $validated = $request->validate([
+            'car_model' => 'required|string|max:255',
+            'car_make' => 'required|string|max:255',
+            'year' => 'required|integer|min:1900|max:2024',
+            'images' => 'required|array|min:1|max:5',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
 
-    $imagePaths = [];
-    if($request->hasFile('images')) {
-        foreach($request->file('images') as $image) {
-            $path = $image->store('car-images', 'public');
-            $imagePaths[] = $path;
+        $imagePaths = [];
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('car-images', 'public');
+                $imagePaths[] = $path;
+            }
         }
+
+        Car::create([
+            'user_id' => auth()->id(),
+            'car_model' => $validated['car_model'],
+            'car_make' => $validated['car_make'],
+            'year' => $validated['year'],
+            'images' => $imagePaths
+        ]);
+
+        return redirect(route('cars.index'));
     }
-
-    Car::create([
-        'user_id' => auth()->id(),
-        'car_model' => $validated['car_model'],
-        'car_make' => $validated['car_make'],
-        'year' => $validated['year'],
-        'images' => $imagePaths
-    ]);
-
-    return redirect(route('cars.index'));
-}
 
     /**
      * Display the specified resource.
@@ -89,7 +94,7 @@ class CarController extends Controller
             'car' => $car,
         ]);
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -97,9 +102,9 @@ class CarController extends Controller
     public function edit(Car $car): View
     {
         Gate::authorize('update', $car);
-         return view('cars.edit', [
+        return view('cars.edit', [
             'car' => $car,
-         ]);
+        ]);
     }
 
     /**
@@ -137,7 +142,7 @@ class CarController extends Controller
         return redirect(route('cars.index'));
     }
 
-    
+
 
     /**
      * Remove the specified resource from storage.

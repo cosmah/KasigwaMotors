@@ -57,18 +57,138 @@
 
 
 
-       
+
         <main class="mt-6">
             <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">Purchase a Car</h1>
                 <form method="POST" action="{{ route('books.store') }}">
                     @csrf
-                    <textarea
-                        name="message"
-                        placeholder="{{ __('What\'s on your mind?') }}"
-                        class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                    >{{ old('message') }}</textarea>
-                    <x-input-error :messages="$errors->get('message')" class="mt-2" />
-                    <x-primary-button class="mt-4">{{ __('Book') }}</x-primary-button>
+                    <div class="m-5 ml-0 text-2xl text-orange-900">
+                        <h1>User Data</h1>
+                    </div>
+                    <div class="mb-4">
+                        <label for="name"
+                            class="block text-sm font-medium text-gray-700">{{ __('Full Name') }}</label>
+                        <input type="text" name="name" id="name"
+                            placeholder="{{ __('Enter your full name') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('name') }}" required />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="nin"
+                            class="block text-sm font-medium text-gray-700">{{ __('National Id Number') }}</label>
+                        <input type="text" name="nin" id="nin" placeholder="{{ __('Enter your nin') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('nin') }}" required />
+                        <x-input-error :messages="$errors->get('nin')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="address"
+                            class="block text-sm font-medium text-gray-700">{{ __('Home Address') }}</label>
+                        <input type="text" name="address" id="address"
+                            placeholder="{{ __('Enter your address') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('address') }}" required />
+                        <x-input-error :messages="$errors->get('address')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="email"
+                            class="block text-sm font-medium text-gray-700">{{ __('Email Address') }}</label>
+                        <input type="email" name="email" id="email"
+                            placeholder="{{ __('Enter your email address') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('email') }}" required />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone"
+                            class="block text-sm font-medium text-gray-700">{{ __('Phone Number') }}</label>
+                        <input type="tel" name="phone" id="phone"
+                            placeholder="{{ __('Enter your phone number') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('phone') }}" required />
+                        <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+                    </div>
+                    <div class="m-5 ml-0 text-2xl text-orange-900">
+                        <h1>Vehicle Data</h1>
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_model"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Model') }}</label>
+                        <input type="text" name="car_model" id="car_model"
+                            placeholder="{{ __('Enter Car Model') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_model', $car->car_model) }}" required />
+                        <x-input-error :messages="$errors->get('car_model')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_make"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Make') }}</label>
+                        <input type="text" name="car_make" id="car_make"
+                            placeholder="{{ __('Enter Car Make') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_make', $car->car_make) }}" required />
+                        <x-input-error :messages="$errors->get('car_make')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_color"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Color') }}</label>
+                        <input type="text" name="car_color" id="car_color" placeholder="{{ __('Car Color') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_color', $car->car_color) }}" required />
+                        <x-input-error :messages="$errors->get('car_color')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_price"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Price') }}</label>
+                        <input type="text" name="car_price" id="car_price"
+                            placeholder="{{ __('Enter Car Price') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_price', $car->car_price) }}" required />
+                        <x-input-error :messages="$errors->get('car_price')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_mileage"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Mileage') }}</label>
+                        <input type="text" name="car_mileage" id="car_mileage"
+                            placeholder="{{ __('Car Mileage') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_mileage', $car->car_mileage) }}" required />
+                        <x-input-error :messages="$errors->get('car_mileage')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_qty"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Quantity') }}</label>
+                        <input type="text" name="car_qty" id="car_qty"
+                            placeholder="{{ __('Car Quantity Needed') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_qty', $car->car_qty) }}" required />
+                        <x-input-error :messages="$errors->get('car_qty')" class="mt-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="car_fuel"
+                            class="block text-sm font-medium text-gray-700">{{ __('Car Fuel') }}</label>
+                        <input type="text" name="car_fuel" id="car_fuel"
+                            placeholder="{{ __('Car Fuel Consumption') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            value="{{ old('car_fuel', $car->car_fuel) }}" required />
+                        <x-input-error :messages="$errors->get('car_fuel')" class="mt-2" />
+                    </div>
+                    <div class="m-5 ml-0 text-2xl text-orange-900">
+                        <h1>Buyer's Note</h1>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message"
+                            class="block text-sm font-medium text-gray-700">{{ __('Additional Message') }}</label>
+                        <textarea name="message" id="message" placeholder="{{ __('What\'s on your mind?') }}"
+                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            rows="4">{{ old('message') }}</textarea>
+                        <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                    </div>
+                    <div class="text-center">
+                        <x-primary-button class="mt-4 w-500px">{{ __('Continue') }}</x-primary-button>
+                    </div>
                 </form>
             </div>
         </main>
@@ -78,6 +198,6 @@
     </div>
 
 
-    < </body>
+</body>
 
 </html>
