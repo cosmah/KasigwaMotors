@@ -179,7 +179,7 @@
             </div>
     
             <div class="mt-8 border-t border-gray-700 pt-4 text-center">
-                <p class="text-gray-500">&copy; 2023 Kasigwa Motors Uganda. All rights reserved.</p>
+                <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved.</p>
             </div>
         </footer>
     </div>
