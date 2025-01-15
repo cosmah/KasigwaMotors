@@ -39,7 +39,7 @@
         </header>
 
         <!-- Hero Section -->
-        <section class="relative bg-cover bg-center h-64 md:h-96"
+        <section class="relative bg-cover bg-center h-30 md:h-96"
             style="background-image: url('{{ asset('images/contact-bg.jpg') }}');">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 <h1 class="text-4xl md:text-6xl text-white font-bold">Get in Touch</h1>
@@ -64,7 +64,8 @@
                                     class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email
+                                    Address</label>
                                 <input type="email" id="email" name="email" required
                                     class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600">
                             </div>
@@ -79,7 +80,7 @@
                             </button>
                         </form>
                     </div>
-        
+
                     <!-- Contact Info -->
                     <div>
                         <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
@@ -88,16 +89,18 @@
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
+                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
                                 </svg>
                                 <span><strong>Showroom:</strong> Banda, Nakawa</span>
                             </li>
                             <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
+                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
                                 </svg>
                                 <span><strong>Office:</strong> Hoima</span>
                             </li>
@@ -112,23 +115,22 @@
                                 <span><a href="mailto:pkasigwa@gmail.com">pkasigwa@gmail.com</a></span>
                             </li>
                             <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path d="M6.379 4.379a1.5 1.5 0 012.121 0L12 7.88m-4.94 4.94L6.379 10.62a1.5 1.5 0 010-2.12zM16.12 6.38a1.5 1.5 0 012.12 2.12L7.88 19.88a1.5 1.5 0 01-2.12-2.12z" />
+                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.379 4.379a1.5 1.5 0 012.121 0L12 7.88m-4.94 4.94L6.379 10.62a1.5 1.5 0 010-2.12zM16.12 6.38a1.5 1.5 0 012.12 2.12L7.88 19.88a1.5 1.5 0 01-2.12-2.12z" />
                                 </svg>
                                 <span>0783299472, 0200912440</span>
                             </li>
                         </ul>
-                        <div class="mt-8">
-                            <a href="https://goo.gl/maps/example" target="_blank"
-                                class="inline-block bg-orange-600 text-white font-medium py-3 px-6 rounded-md shadow-md hover:bg-orange-700 transition duration-300">
-                                View on Map
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </main>
+        <div class="mt-8">
+           <div id="map" class="mt-1 mb-1 h-80 w-full rounded-md shadow-md"></div>
+        </div>
         
 
         <div class="whatsapp fixed bottom-4 right-4 z-50">
@@ -177,6 +179,28 @@
                 </div>
             </footer>
         </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyxrRBzwuC30BCbnq2eHDQcRurWTUH0Lk&callback=initMap" async
+            defer></script>
+
+        <script>
+            function initMap() {
+                const location = {
+                    lat: 0.344160,
+                    lng: 32.640735
+                }; // Example coordinates for Kampala, Uganda
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 14,
+                    center: location,
+                });
+
+                // Add a marker
+                new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: "Our Location",
+                });
+            }
+        </script>
 </body>
 
 </html>
