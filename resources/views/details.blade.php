@@ -109,7 +109,7 @@
                         @if (Route::has('login'))
                             @auth
                                 <!-- Authenticated User: Show the "Buy This Car" button -->
-                                <a href="/book" class="button">Buy This Car</a>
+                                <a href="/purchase" class="button">Buy This Car</a>
                             @else
                                 <!-- Guest User: Redirect to Login Page -->
                                 <a href="{{ route('login') }}" class="button">

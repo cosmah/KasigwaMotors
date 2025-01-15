@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\View;
 use App\Models\Car;
+use App\Http\Controllers\BookController;
 
 
 
@@ -31,9 +32,9 @@ Route::get('/hire', function () {
 //     Route::get('/book')->name('book');
 // });
 
-Route::get('/book', function () {
-    return view('book');
-})->middleware(['auth', 'verified'])->name('book');
+Route::get('/purchase', function () {
+    return view('purchase');
+})->middleware(['auth', 'verified'])->name('purchase');
 
 Route::get('/sales', function(){
     $cars = Car::all();
@@ -70,5 +71,10 @@ Route::resource('cars', CarController::class)
 Route::get('/cars/vehicles', [
     CarController::class, 'vehicles'
 ])->name('cars.vehicles');
+
+// bookings handling
+Route::resource(('books'), BookController::class)
+    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
