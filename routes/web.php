@@ -27,9 +27,13 @@ Route::get('/hire', function () {
     return view('hire', ['cars' => $cars]);
 });
 
-Route::get('/book', function(){
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/book')->name('book');
+// });
+
+Route::get('/book', function () {
     return view('book');
-});
+})->middleware(['auth', 'verified'])->name('book');
 
 Route::get('/sales', function(){
     $cars = Car::all();

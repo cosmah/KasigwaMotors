@@ -79,25 +79,25 @@
                         </div>
 
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
-                            <img src="{{ asset('images/car.svg')}} " class="w-8 h-auto mr-2"/>
+                            <img src="{{ asset('images/car.svg') }} " class="w-8 h-auto mr-2" />
                             {{ $car->car_make }}
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
-                            <img src="{{ asset('images/year.svg')}} " class="w-8 h-auto mr-2"/>
+                            <img src="{{ asset('images/year.svg') }} " class="w-8 h-auto mr-2" />
                             {{ $car->year }}
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
-                            <img src="{{ asset('images/desc.svg')}} " class="w-8 h-auto mr-2"/>
+                            <img src="{{ asset('images/desc.svg') }} " class="w-8 h-auto mr-2" />
                             {{ $car->description }}
 
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
-                            <img src="{{ asset('images/fuel.svg')}} " class="w-8 h-auto mr-2"/>
+                            <img src="{{ asset('images/fuel.svg') }} " class="w-8 h-auto mr-2" />
                             {{ $car->description }}
 
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
-                            <img src="{{ asset('images/mile.svg')}} " class="w-8 h-auto mr-2"/>
+                            <img src="{{ asset('images/mile.svg') }} " class="w-8 h-auto mr-2" />
                             {{ $car->description }}
 
                         </p>
@@ -106,13 +106,25 @@
                 <div class="">
                     <div class="btn-2">
                         <a href="/sales" class="button">View More Cars</a>
-                        <a href="/book" class="button">Buy This Car</a>
+                        @if (Route::has('login'))
+                            @auth
+                                <!-- Authenticated User: Show the "Buy This Car" button -->
+                                <a href="/book" class="button">Buy This Car</a>
+                            @else
+                                <!-- Guest User: Redirect to Login Page -->
+                                <a href="{{ route('login') }}" class="button">
+                                    Buy This Car
+                                </a>
+                            @endauth
+                        @endif
+
+
                         <a href="/hire-car" class="button">Hire This Car</a>
                     </div>
                 </div>
             </div>
         </main>
-        
+
         <footer class="bg-gray-900 text-white py-8 mt-12">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-between">
