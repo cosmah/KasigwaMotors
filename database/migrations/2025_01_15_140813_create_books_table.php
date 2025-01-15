@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('book', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
@@ -22,12 +22,11 @@ return new class extends Migration
             $table->string('car_model');
             $table->string('car_make');
             $table->string('car_color');
-            $table->string('car_price');
+            $table->integer('car_price');
             $table->string('car_mileage');
-            $table->string('car_quantity');
+            $table->integer('car_quantity');
             $table->string('car_fuel');
-            $table->string('car_fuel');
-            $table->string('message');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('book');
+        Schema::dropIfExists('books');
     }
 };

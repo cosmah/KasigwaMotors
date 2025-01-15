@@ -36,7 +36,20 @@ class BookController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'message'=>'required|string|max:255',
+            // 'message'=>'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'nin'=> 'required|string|max:255',
+            'address'=> 'required|string|max:255',
+            'email'=> 'required|string|max:50',
+            'phone'=> 'required|string|max:10',
+            'car_model'=> 'required|string|max:255',
+            'car_make'=> 'required|string|max:255',
+            'car_color'=> 'required|string|max:255',
+            'car_price'=> 'required|integer|max:2550000000',
+            'car_mileage'=> 'required|string|max:255',
+            'car_quantity'=> 'required|integer|max:255',
+            'car_fuel' => 'required|string|max:255',
+            'message' => 'required|string|max:255',
         ]);
 
         $request->user()->books()->create($validated);
