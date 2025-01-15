@@ -64,8 +64,7 @@
                                     class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email
-                                    Address</label>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
                                 <input type="email" id="email" name="email" required
                                     class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600">
                             </div>
@@ -80,7 +79,7 @@
                             </button>
                         </form>
                     </div>
-
+        
                     <!-- Contact Info -->
                     <div>
                         <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
@@ -89,6 +88,20 @@
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-center space-x-4">
+                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
+                                </svg>
+                                <span><strong>Showroom:</strong> Banda, Nakawa</span>
+                            </li>
+                            <li class="flex items-center space-x-4">
+                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
+                                </svg>
+                                <span><strong>Office:</strong> Hoima</span>
+                            </li>
+                            <li class="flex items-center space-x-4">
                                 <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -96,23 +109,14 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M3 10v11a1 1 0 001 1h16a1 1 0 001-1V10" />
                                 </svg>
-                                <span>1234 Street Name, City, Country</span>
+                                <span><a href="mailto:pkasigwa@gmail.com">pkasigwa@gmail.com</a></span>
                             </li>
                             <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a3 3 0 003.22 0L21 8M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8" />
+                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6.379 4.379a1.5 1.5 0 012.121 0L12 7.88m-4.94 4.94L6.379 10.62a1.5 1.5 0 010-2.12zM16.12 6.38a1.5 1.5 0 012.12 2.12L7.88 19.88a1.5 1.5 0 01-2.12-2.12z" />
                                 </svg>
-                                <span>info@kasigwamotors.com</span>
-                            </li>
-                            <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 10l4.94-4.94a1.5 1.5 0 00-2.12-2.12L12 7.88M4.06 15.06a1.5 1.5 0 002.12 2.12L12 16.12m4.94-4.94a1.5 1.5 0 112.12 2.12L12 12" />
-                                </svg>
-                                <span>+256 123 456 789</span>
+                                <span>0783299472, 0200912440</span>
                             </li>
                         </ul>
                         <div class="mt-8">
@@ -125,6 +129,7 @@
                 </div>
             </div>
         </main>
+        
 
         <div class="whatsapp fixed bottom-4 right-4 z-50">
             <a href="https://wa.me/256783299472" target="_blank">
