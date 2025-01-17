@@ -25,7 +25,21 @@
                     <a href="/about" class="nav-link hover:text-gray-700">About Us</a>
                     <a href="/contact" class="nav-link hover:text-gray-700">Contact Us</a>
                 </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
             </nav>
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
+                <a href="/sales" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Cars for Sale</a>
+                <a href="/hire" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Hire a Car</a>
+                <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">About Us</a>
+                <a href="/contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Contact Us</a>
+            </div>
         </header>
 
         <main class="container mx-auto px-4 py-8">
@@ -35,7 +49,7 @@
                 <!-- Customer Information -->
                 <div class="mb-8">
                     <h2 class="text-2xl font-semibold text-orange-600 mb-4">Customer Information</h2>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <p class="text-gray-600">Name:</p>
                             <p class="font-semibold">{{ $formData['name'] }}</p>
@@ -52,7 +66,7 @@
                             <p class="text-gray-600">Phone:</p>
                             <p class="font-semibold">{{ $formData['phone'] }}</p>
                         </div>
-                        <div class="col-span-2">
+                        <div class="col-span-1 md:col-span-2">
                             <p class="text-gray-600">Address:</p>
                             <p class="font-semibold">{{ $formData['address'] }}</p>
                         </div>
@@ -62,7 +76,7 @@
                 <!-- Vehicle Information -->
                 <div class="mb-8">
                     <h2 class="text-2xl font-semibold text-orange-600 mb-4">Vehicle Details</h2>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <p class="text-gray-600">Model:</p>
                             <p class="font-semibold">{{ $formData['car_model'] }}</p>
@@ -136,6 +150,13 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
