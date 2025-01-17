@@ -98,7 +98,7 @@ Route::resource(('books'), BookController::class)
 
 // bookings handling
 Route::resource(('hirings'), HiringController::class)
-    ->only(['hirings', 'store', 'edit', 'update', 'destroy'])
+    ->only(['hiring', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 

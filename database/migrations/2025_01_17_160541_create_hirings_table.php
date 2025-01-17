@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('hirings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('name');
+            $table->string('nin');
+            $table->string('address');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('car_model');
+            $table->string('car_make');
+            $table->string('car_color');
+            $table->integer('car_price');
+            $table->string('car_mileage');
+            $table->integer('car_quantity');
+            $table->string('car_fuel');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

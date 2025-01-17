@@ -138,7 +138,7 @@
                         <input type="hidden" name="{{ $key }}" value="{{ $value }}">
                     @endforeach
                     <button type="submit" class="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors text-lg font-semibold">
-                        Confirm Purchase
+                        Confirm Booking
                     </button>
                 </form>
             </div>

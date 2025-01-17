@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function hirings(): HasMany
     {
-        return $this->hasMany(Book::class);
+        return $this->hasMany(Hiring::class);
     }
 
 }
