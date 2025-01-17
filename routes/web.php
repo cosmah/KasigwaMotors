@@ -24,6 +24,11 @@ Route::get(
     [CarController::class, 'details']
 )->name('details');
 
+Route::get(
+    '/cars/{id}',
+    [CarController::class, 'motors']
+)->name('motors');
+
 
 Route::get('/hire', function () {
     $cars = Car::all();

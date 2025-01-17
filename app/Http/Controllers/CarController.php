@@ -44,12 +44,20 @@ class CarController extends Controller
         return view('details', compact('car'));
     }
 
+    public function motors($id)
+    {
+        $car = Car::findOrFail($id);
+        return view('motors', compact('car'));
+    }
+    
+
     public function showPurchaseForm($id)
     {
         $car = Car::findOrFail($id);
         return view('purchase', compact('car'));
     }
 
+    
 
 
     /**
