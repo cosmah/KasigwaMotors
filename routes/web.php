@@ -113,5 +113,8 @@ Route::get('/carhirings/{id}', [HiringController::class, 'showDetails'])->name('
 
 //contact form
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+Route::get('/contact/{contact}', [ContactController::class, 'show'])->name('contacts.show');
+Route::delete('/contact/{contact}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
 require __DIR__ . '/auth.php';

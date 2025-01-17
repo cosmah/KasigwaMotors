@@ -4,7 +4,6 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -30,6 +29,19 @@
                         <div>
                             <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Purchase Bookings</h3>
                             <p class="text-sm text-gray-500 dark:text-gray-400">View and manage your purchase bookings.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Contact Messages Shortcut -->
+                <a href="{{ route('contacts.index') }}" class="block p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <div class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Contact Messages</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">View and manage contact form submissions.</p>
                         </div>
                     </div>
                 </a>

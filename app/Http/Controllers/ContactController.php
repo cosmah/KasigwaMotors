@@ -12,7 +12,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::latest()->paginate(10);
+        return view('contact.index', compact('contacts'));
     }
 
     /**
@@ -30,24 +31,33 @@ class ContactController extends Controller
     {
         //
         $validated = $request->validate([
-            "name"=> "required|string|max:255",
-            "email"=> "required|email|max:255",
+            "name" => "required|string|max:255",
+            "email" => "required|email|max:255",
             'message' => 'required|string'
         ]);
 
         Contact::create($validated);
 
         return redirect()
-          ->back()
-          ->with('success','Thank you for your message. We will get back to you in a flash.');
+            ->back()
+            ->with('success', 'Thank you for your message. We will get back to you in a flash.');
     }
 
     /**
      * Display the specified resource.
      */
+
+
     public function show(Contact $contact)
     {
-        //
+        return view('contact.show', compact('contact'));
+    }
+
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+        return redirect()->route('contacts.index')
+            ->with('success', 'Message deleted successfully');
     }
 
     /**
@@ -66,11 +76,5 @@ class ContactController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Contact $contact)
-    {
-        //
-    }
+
 }
