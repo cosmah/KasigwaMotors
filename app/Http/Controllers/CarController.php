@@ -143,14 +143,11 @@ class CarController extends Controller
             'year' => 'required|integer|min:1900|max:2024',
             'images' => 'nullable|array|max:5',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'message' => 'nullable|string',
             'car_color' => 'required|string|max:255',
             'car_price' => 'required|integer|max:2550000000',
             'car_mileage' => 'required|string|max:255',
-            'car_quantity' => 'required|integer|max:255',
             'car_fuel' => 'required|string|max:255',
         ]);
-
         $imagePaths = $car->images ?? [];
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -167,10 +164,8 @@ class CarController extends Controller
             'car_color' => $validated['car_color'],
             'car_price' => $validated['car_price'],
             'car_mileage' => $validated['car_mileage'],
-            'car_fuel'=> $validated['car_fuel'],
-            'message' => $validated['message'] ?? $car->message,
+            'car_fuel'=> $validated['car_fuel']
         ]);
-
         return redirect(route('cars.index'));
     }
 
