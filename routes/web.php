@@ -107,5 +107,8 @@ Route::resource(('hirings'), HiringController::class)
 Route::get('/summary', [BookController::class, 'summary'])->name('summary');
 Route::get('/bookings/{id}', [BookController::class, 'showDetails'])->name('bookings.bookingdetails');
 
+// Add this new route for handling the summary page
+Route::get('/hiring-summary', [HiringController::class, 'summary'])->name('hiring-summary');
+Route::get('/carhirings/{id}', [HiringController::class, 'showDetails'])->name('carhirings.hiringdetails');
 
 require __DIR__ . '/auth.php';

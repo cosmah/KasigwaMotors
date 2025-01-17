@@ -119,4 +119,26 @@ class HiringController extends Controller
         $car = Car::findOrFail($id);
         return view('hiring', compact('car'));
     }
+
+
+    public function summary()
+    {
+        $carhirings = Hiring::select('id', 'name', 'Booking Date', 'car_model', 'car_make', 'car_price', 'car_quantity')
+            ->get()
+            ->map(function ($carhiring, $index) {
+                $carhiring->index = $index + 1; // Add the index dynamically
+                $carhiring->total_cost = $carhiring->car_price * $carhiring->car_quantity; // Calculate total cost
+                return $carhiring;
+            });
+
+        return view('hiring-summary', compact('carhirings'));
+    }
+
+    public function showDetails($id)
+    {
+        $carhiring = Hiring::findOrFail($id);
+
+        return view('hiringdetails', compact('carhiring'));
+    }
+
 }
