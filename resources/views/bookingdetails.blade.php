@@ -16,6 +16,13 @@
                         <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100 ml-3">Complete Booking Details</h3>
                     </div>
                     <ul class="space-y-4">
+                        <!-- Order Date -->
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <strong>Order Date:</strong> <span class="ml-2">{{ \Carbon\Carbon::parse($booking->created_at)->format('F j, Y, g:i a') }}</span>
+                        </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
@@ -36,31 +43,31 @@
                         </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5l-7 7 7 7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M12 4v16" />
                             </svg>
                             <strong>Phone:</strong> <span class="ml-2">{{ $booking->phone }}</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M12 4v16" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                             <strong>Address:</strong> <span class="ml-2">{{ $booking->address }}</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5l-7 7 7 7" />
                             </svg>
                             <strong>Car Model:</strong> <span class="ml-2">{{ $booking->car_model }}</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5l-7 7 7 7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M12 4v16" />
                             </svg>
                             <strong>Car Make:</strong> <span class="ml-2">{{ $booking->car_make }}</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M12 4v16" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5l-7 7 7 7" />
                             </svg>
                             <strong>Car Color:</strong> <span class="ml-2">{{ $booking->car_color }}</span>
                         </li>
@@ -81,12 +88,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                             <strong>Car Quantity:</strong> <span class="ml-2">{{ $booking->car_quantity }}</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5l-7 7 7 7" />
-                            </svg>
-                            <strong>Total Cost:</strong> <span class="ml-2">UGX {{ number_format($booking->car_price * $booking->car_quantity, 2) }}</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="h-6 w-6 text-blue-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
