@@ -19,16 +19,17 @@ Route::get('/list', function () {
     return view('list', ['cars' => $cars]);
 });
 
+// For details view
 Route::get(
-    '/cars/{id}',
+    '/cars/details/{id}',
     [CarController::class, 'details']
 )->name('details');
 
+// For motors view
 Route::get(
-    '/cars/{id}',
+    '/cars/motors/{id}',
     [CarController::class, 'motors']
 )->name('motors');
-
 
 Route::get('/hire', function () {
     $cars = Car::all();
