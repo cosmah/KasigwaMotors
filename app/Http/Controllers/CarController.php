@@ -21,9 +21,16 @@ class CarController extends Controller
         ]);
     }
 
+    // public function vehicles(): View
+    // {
+    //     return view('cars.vehicles', [
+    //         'cars' => Car::with('user')->latest()->get(),
+    //     ]);
+    // }
+
     public function vehicles(): View
     {
-        return view('cars.vehicles', [
+        return view('vehicles', [
             'cars' => Car::with('user')->latest()->get(),
         ]);
     }

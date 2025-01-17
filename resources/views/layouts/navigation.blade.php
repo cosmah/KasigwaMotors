@@ -18,7 +18,10 @@
                     <x-nav-link :href="route('cars.index')" :active="request()->routeIs('cars.index')">
                         {{ __('Add Cars') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('cars.vehicles')" :active="request()->routeIs('cars.vehicles')">
+                    {{-- <x-nav-link :href="route('cars.vehicles')" :active="request()->routeIs('cars.vehicles')">
+                        {{ __('Car List') }}
+                    </x-nav-link> --}}
+                    <x-nav-link :href="route('vehicles')" :active="request()->routeIs('vehicles')">
                         {{ __('Car List') }}
                     </x-nav-link>
                 </div>
@@ -91,7 +94,10 @@
             <x-responsive-nav-link :href="route('cars.index')" :active="request()->routeIs('cars.index')">
                 {{ __('Add Cars') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('cars.vehicles')" :active="request()->routeIs('cars.vehicles')">
+            {{-- <x-responsive-nav-link :href="route('cars.vehicles')" :active="request()->routeIs('cars.vehicles')">
+                {{ __('Car List') }}
+            </x-responsive-nav-link> --}}
+            <x-responsive-nav-link :href="route('vehicles')" :active="request()->routeIs('vehicles')">
                 {{ __('Car List') }}
             </x-responsive-nav-link>
         </div>

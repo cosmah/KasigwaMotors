@@ -93,6 +93,14 @@ Route::get('/cars/vehicles', [
     'vehicles'
 ])->name('cars.vehicles');
 
+Route::get('/vehicles', [
+    CarController::class,
+    'vehicles'
+])->name('vehicles');
+
+
+
+
 // bookings handling
 Route::resource(('books'), BookController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
