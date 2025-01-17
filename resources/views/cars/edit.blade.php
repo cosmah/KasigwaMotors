@@ -41,6 +41,54 @@
                 />
                 <x-input-error :messages="$errors->get('year')" class="mt-2" />
             </div>
+            <div class="mb-4">
+                <label for="car_color" class="block text-sm font-medium text-gray-700">{{ __('Color') }}</label>
+                <input
+                    type="text"
+                    name="car_color"
+                    id="car_color"
+                    placeholder="{{ __('Enter Color') }}"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                    value="{{ old('car_color', $car->car_color) }}"
+                />
+                <x-input-error :messages="$errors->get('car_color')" class="mt-2" />
+            </div>
+            <div class="mb-4">
+                <label for="car_price" class="block text-sm font-medium text-gray-700">{{ __('Price') }}</label>
+                <input
+                    type="number"
+                    name="car_price"
+                    id="car_price"
+                    placeholder="{{ __('Enter Price') }}"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                    value="{{ old('car_price', $car->car_price) }}"
+                />
+                <x-input-error :messages="$errors->get('car_price')" class="mt-2" />
+            </div>
+            <div class="mb-4">
+                <label for="car_mileage" class="block text-sm font-medium text-gray-700">{{ __('Mileage') }}</label>
+                <input
+                    type="number"
+                    name="car_mileage"
+                    id="car_mileage"
+                    placeholder="{{ __('Enter car mileage') }}"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                    value="{{ old('car_mileage', $car->car_mileage) }}"
+                />
+                <x-input-error :messages="$errors->get('car_mileage')" class="mt-2" />
+            </div>
+            <div class="mb-4">
+                <label for="car_fuel" class="block text-sm font-medium text-gray-700">{{ __('Fuel Consumption') }}</label>
+                <input
+                    type="number"
+                    name="car_fuel"
+                    id="car_fuel"
+                    placeholder="{{ __('Enter fuel consumption') }}"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                    value="{{ old('car_fuel', $car->car_fuel) }}"
+                />
+                <x-input-error :messages="$errors->get('car_fuel')" class="mt-2" />
+            </div>
 
             <div class="mb-4">
                 <label for="images" class="block text-sm font-medium text-gray-700">{{ __('Car Images (Select up to 5)') }}</label>
