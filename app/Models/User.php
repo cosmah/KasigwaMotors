@@ -57,4 +57,9 @@ class User extends Authenticatable
         return $this->hasMany(Book::class);
     }
 
+    public function hirings(): HasMany
+    {
+        return $this->hasMany(Book::class);
+    }
+
 }

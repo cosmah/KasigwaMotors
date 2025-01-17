@@ -1,25 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
-use App\Models\Book;
-use Illuminate\Http\Request;
-use App\Models\Car;
 
-class BookController extends Controller
+use App\Models\Hiring;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Models\Car;
+use Illuminate\Http\RedirectResponse;
+
+class HiringController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function hiring(): View
     {
-        //
-    }
-
-    public function purchase(): View
-    {
-        return view('purchase');
+        return view('hiring');
     }
 
     /**
@@ -51,16 +47,17 @@ class BookController extends Controller
             'message' => 'required|string|max:255',
         ]);
 
-        $request->user()->books()->create($validated);
+        $request->user()->hirings()->create($validated);
 
         return redirect(route('dashboard'))
-            ->with('success', 'Your purchase has been successfully processed!');
+            ->with('success', 'Your hire has been successfully processed!');
     }
+
 
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(Hiring $hiring)
     {
         //
     }
@@ -87,7 +84,7 @@ class BookController extends Controller
         // Calculate total cost
         $totalCost = $validated['car_price'] * $validated['car_quantity'];
 
-        return view('cart', [
+        return view('carts', [
             'formData' => $validated,
             'totalCost' => $totalCost
         ]);
@@ -96,7 +93,7 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit(Hiring $hiring)
     {
         //
     }
@@ -104,7 +101,7 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Hiring $hiring)
     {
         //
     }
@@ -112,17 +109,14 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(Hiring $hiring)
     {
         //
     }
 
-    public function showPurchaseForm($id)
+    public function showHiringForm($id)
     {
         $car = Car::findOrFail($id);
-        return view('purchase', compact('car'));
+        return view('hiring', compact('car'));
     }
-
-
-
 }

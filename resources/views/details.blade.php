@@ -113,13 +113,25 @@
                             @else
                                 <!-- Guest User: Redirect to Login Page -->
                                 <a href="{{ route('login') }}" class="button">
-                                    Buy This Car
+                                    Login To Buy This Car
+                                </a>
+                            @endauth
+                        @endif
+
+                        @if (Route::has('login'))
+                            @auth
+                                <!-- Authenticated User: Show the "Buy This Car" button -->
+                                <a href="{{ route('hiring', ['id' => $car->id]) }}" class="button">Hire This Car</a>
+                            @else
+                                <!-- Guest User: Redirect to Login Page -->
+                                <a href="{{ route('login') }}" class="button">
+                                    Login to Hire This Car
                                 </a>
                             @endauth
                         @endif
 
 
-                        <a href="/hire-car" class="button">Hire This Car</a>
+    
                     </div>
                 </div>
             </div>
@@ -161,7 +173,7 @@
                 </div>
 
                 <div class="mt-8 border-t border-gray-700 pt-4 text-center">
-                    <p class="text-gray-500">&copy; 2023 Kasigwa Motors Uganda. All rights reserved.</p>
+                    <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved.</p>
                 </div>
         </footer>
     </div>

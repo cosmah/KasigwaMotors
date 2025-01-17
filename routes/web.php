@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
-use Illuminate\Support\Facades\View;
+use App\Http\Controllers\HiringController;
 use App\Models\Car;
 use App\Http\Controllers\BookController;
 
@@ -38,13 +38,19 @@ Route::get('/purchase/{id}', [
     CarController::class, 'showPurchaseForm'
     ])->name('purchase');
 
+Route::get('/hiring/{id}', [
+    HiringController::class, 'showHiringForm'
+    ])->name('hiring');
+
 Route::get('/sales', function () {
     $cars = Car::all();
     return view('sales', ['cars' => $cars]);
 });
 
 // Add this new route for handling the purchase form submission to cart
-Route::post('/cart', [CarController::class, 'showCart'])->name('show.cart');
+Route::post('/cart', [BookController::class, 'showCart'])->name('show.cart');
+// Add this new route for handling the hiring form submission to cart
+Route::post('/carts', [HiringController::class, 'showCart'])->name('show.carts');
 
 
 Route::get('/about', function () {
@@ -71,8 +77,10 @@ Route::middleware('auth')->group(function () {
 
 // Update the books store route
 Route::post('/books', [BookController::class, 'store'])->name('books.store');
+Route::get('/hirings', [HiringController::class, 'store'])->name('hirings.store');
 
 Route::post('/show-cart', [BookController::class, 'showCart'])->name('show.cart');
+
 
 Route::resource('cars', CarController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
@@ -87,5 +95,11 @@ Route::get('/cars/vehicles', [
 Route::resource(('books'), BookController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
+
+// bookings handling
+Route::resource(('hirings'), HiringController::class)
+    ->only(['hirings', 'store', 'edit', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
 
 require __DIR__ . '/auth.php';
