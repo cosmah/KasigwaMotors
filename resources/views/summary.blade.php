@@ -14,6 +14,7 @@
                         <thead class="bg-gray-200 dark:bg-gray-700">
                             <tr>
                                 <th class="border border-gray-300 dark:border-gray-700 px-4 py-2">#</th>
+                                <th class="border border-gray-300 dark:border-gray-700 px-4 py-2">Booking Date</th>
                                 <th class="border border-gray-300 dark:border-gray-700 px-4 py-2">Name</th>
                                 <th class="border border-gray-300 dark:border-gray-700 px-4 py-2">Car Model</th>
                                 <th class="border border-gray-300 dark:border-gray-700 px-4 py-2">Car Make</th>
@@ -24,7 +25,9 @@
                             @forelse($bookings as $booking)
                                 <tr class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700"
                                 onclick="window.location='{{ route('bookings.bookingdetails', ['id' => $booking->id]) }}';">
+                                    
                                     <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">{{ $booking->index }}</td>
+                                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">{{ \Carbon\Carbon::parse($booking->created_at)->format('F j, Y, g:i a') }}</td>
                                     <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">{{ $booking->name }}</td>
                                     <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">{{ $booking->car_model }}</td>
                                     <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">{{ $booking->car_make }}</td>

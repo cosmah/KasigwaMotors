@@ -95,7 +95,7 @@ class BookController extends Controller
 
     public function summary()
 {
-    $bookings = Book::select('id', 'name', 'car_model', 'car_make', 'car_price', 'car_quantity')
+    $bookings = Book::select('id', 'name','Booking Date', 'car_model', 'car_make', 'car_price', 'car_quantity')
     ->get()
     ->map(function ($booking, $index) {
         $booking->index = $index + 1; // Add the index dynamically
