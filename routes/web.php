@@ -43,6 +43,10 @@ Route::get('/sales', function () {
     return view('sales', ['cars' => $cars]);
 });
 
+// Add this new route for handling the purchase form submission to cart
+Route::post('/cart', [CarController::class, 'showCart'])->name('show.cart');
+
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -65,6 +69,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Update the books store route
+Route::post('/books', [BookController::class, 'store'])->name('books.store');
+
+Route::post('/show-cart', [BookController::class, 'showCart'])->name('show.cart');
 
 Route::resource('cars', CarController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])

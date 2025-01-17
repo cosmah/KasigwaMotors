@@ -36,25 +36,25 @@ class BookController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            // 'message'=>'required|string|max:255',
             'name' => 'required|string|max:255',
-            'nin'=> 'required|string|max:255',
-            'address'=> 'required|string|max:255',
-            'email'=> 'required|string|max:50',
-            'phone'=> 'required|string|max:10',
-            'car_model'=> 'required|string|max:255',
-            'car_make'=> 'required|string|max:255',
-            'car_color'=> 'required|string|max:255',
-            'car_price'=> 'required|integer|max:2550000000',
-            'car_mileage'=> 'required|string|max:255',
-            'car_quantity'=> 'required|integer|max:255',
+            'nin' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'email' => 'required|string|max:50',
+            'phone' => 'required|string|max:10',
+            'car_model' => 'required|string|max:255',
+            'car_make' => 'required|string|max:255',
+            'car_color' => 'required|string|max:255',
+            'car_price' => 'required|integer|max:2550000000',
+            'car_mileage' => 'required|string|max:255',
+            'car_quantity' => 'required|integer|max:255',
             'car_fuel' => 'required|string|max:255',
             'message' => 'required|string|max:255',
         ]);
 
         $request->user()->books()->create($validated);
 
-        return redirect(route('purchase'));
+        return redirect(route('dashboard'))
+            ->with('success', 'Your purchase has been successfully processed!');
     }
 
     /**
@@ -63,6 +63,34 @@ class BookController extends Controller
     public function show(Book $book)
     {
         //
+    }
+
+    public function showCart(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'nin' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'email' => 'required|string|max:50',
+            'phone' => 'required|string|max:10',
+            'car_model' => 'required|string|max:255',
+            'car_make' => 'required|string|max:255',
+            'car_color' => 'required|string|max:255',
+            'car_price' => 'required|integer|max:2550000000',
+            'car_mileage' => 'required|string|max:255',
+            'year' => 'required',
+            'car_quantity' => 'required|integer|max:255',
+            'car_fuel' => 'required|string|max:255',
+            'message' => 'required|string|max:255',
+        ]);
+
+        // Calculate total cost
+        $totalCost = $validated['car_price'] * $validated['car_quantity'];
+
+        return view('cart', [
+            'formData' => $validated,
+            'totalCost' => $totalCost
+        ]);
     }
 
     /**

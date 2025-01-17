@@ -61,7 +61,7 @@
         <main class="mt-6">
             <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                 <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">Purchase a Car</h1>
-                <form method="POST" action="{{ route('books.store') }}">
+                <form method="POST" action="{{ route('show.cart') }}">
                     @csrf
                     <div class="m-5 ml-0 text-2xl text-orange-900">
                         <h1>User Data</h1>
@@ -190,13 +190,13 @@
                     <div class="mb-4">
                         <label for="message"
                             class="block text-sm font-medium text-gray-700">{{ __('Additional Message') }}</label>
-                        <textarea name="message" id="message" placeholder="{{ __('What\'s on your mind?') }}"
+                        <textarea name="message" id="message" placeholder="{{ __('Would you like to say somthing ?') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                             rows="4">{{ old('message') }}</textarea>
                         <x-input-error :messages="$errors->get('message')" class="mt-2" />
                     </div>
-                    <div class="text-center">
-                        <x-primary-button class="mt-4 w-500px">{{ __('Continue') }}</x-primary-button>
+                    <div class="btn-2">
+                        <button type="submit" class="button">Continue</button>
                     </div>
                 </form>
             </div>
