@@ -6,7 +6,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\HiringController;
 use App\Models\Car;
 use App\Http\Controllers\BookController;
-
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/', function () {
@@ -110,5 +110,8 @@ Route::get('/bookings/{id}', [BookController::class, 'showDetails'])->name('book
 // Add this new route for handling the summary page
 Route::get('/hiring-summary', [HiringController::class, 'summary'])->name('hiring-summary');
 Route::get('/carhirings/{id}', [HiringController::class, 'showDetails'])->name('carhirings.hiringdetails');
+
+//contact form
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 require __DIR__ . '/auth.php';

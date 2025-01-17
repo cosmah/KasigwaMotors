@@ -50,88 +50,63 @@
         <main class="py-16">
             <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+
                     <!-- Contact Form -->
                     <div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">We’d Love to Hear from You</h2>
-                        <p class="text-lg text-gray-600 mb-8">
-                            Whether you have questions about our services, need assistance, or want to share feedback,
-                            we’re here to help.
-                        </p>
-                        <form action="/send-message" method="POST" class="space-y-6">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">We'd Love to Hear from You</h2>
+
+                        @if (session('success'))
+                            <div class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
+                            @csrf
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
                                 <input type="text" id="name" name="name" required
-                                    class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600">
+                                    class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600 @error('name') border-red-500 @enderror"
+                                    value="{{ old('name') }}">
+                                @error('name')
+                                    <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                                @enderror
                             </div>
+
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700">Email
                                     Address</label>
                                 <input type="email" id="email" name="email" required
-                                    class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600">
+                                    class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600 @error('email') border-red-500 @enderror"
+                                    value="{{ old('email') }}">
+                                @error('email')
+                                    <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                                @enderror
                             </div>
+
                             <div>
                                 <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
                                 <textarea id="message" name="message" rows="5" required
-                                    class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600"></textarea>
+                                    class="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-600 focus:border-orange-600 @error('message') border-red-500 @enderror">{{ old('message') }}</textarea>
+                                @error('message')
+                                    <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                                @enderror
                             </div>
+
                             <button type="submit"
                                 class="bg-orange-600 text-white font-medium py-3 px-6 rounded-md shadow-md hover:bg-orange-700 transition duration-300">
                                 Send Message
                             </button>
                         </form>
                     </div>
-
-                    <!-- Contact Info -->
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
-                        <p class="text-lg text-gray-600 mb-8">
-                            Visit us or reach out via phone or email. We're here to assist you every step of the way.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
-                                </svg>
-                                <span><strong>Showroom:</strong> Banda, Nakawa</span>
-                            </li>
-                            <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 2C8.686 2 6 4.686 6 8c0 3.314 6 12 6 12s6-8.686 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.38 0-2.5-1.121-2.5-2.5S10.62 5.5 12 5.5 14.5 6.621 14.5 8 13.38 10.5 12 10.5z" />
-                                </svg>
-                                <span><strong>Office:</strong> Hoima</span>
-                            </li>
-                            <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 10l9-7 9 7-9 7-9-7z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 10v11a1 1 0 001 1h16a1 1 0 001-1V10" />
-                                </svg>
-                                <span><a href="mailto:pkasigwa@gmail.com">pkasigwa@gmail.com</a></span>
-                            </li>
-                            <li class="flex items-center space-x-4">
-                                <svg class="w-6 h-6 text-orange-600" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M6.379 4.379a1.5 1.5 0 012.121 0L12 7.88m-4.94 4.94L6.379 10.62a1.5 1.5 0 010-2.12zM16.12 6.38a1.5 1.5 0 012.12 2.12L7.88 19.88a1.5 1.5 0 01-2.12-2.12z" />
-                                </svg>
-                                <span>0783299472, 0200912440</span>
-                            </li>
-                        </ul>
-                        
-                    </div>
                 </div>
             </div>
         </main>
         <div class="mt-8">
-           <div id="map" class="mt-1 mb-1 h-80 w-full rounded-md shadow-md"></div>
+            <div id="map" class="mt-1 mb-1 h-80 w-full rounded-md shadow-md"></div>
         </div>
-        
+
 
         <div class="whatsapp fixed bottom-4 right-4 z-50">
             <a href="https://wa.me/256783299472" target="_blank">
