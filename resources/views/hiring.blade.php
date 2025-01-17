@@ -119,7 +119,7 @@
                         <input type="text" name="car_model" id="car_model"
                             placeholder="{{ __('Enter Car Model') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('car_model', $car->car_model) }}" disabled />
+                            value="{{ old('car_model', $car->car_model) }}" readonly />
                         <x-input-error :messages="$errors->get('car_model')" class="mt-2" />
                     </div>
                     <div class="mb-4">
@@ -128,7 +128,7 @@
                         <input type="text" name="car_make" id="car_make"
                             placeholder="{{ __('Enter Car Make') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('car_make', $car->car_make) }}" disabled />
+                            value="{{ old('car_make', $car->car_make) }}" readonly />
                         <x-input-error :messages="$errors->get('car_make')" class="mt-2" />
                     </div>
                     <div class="mb-4">
@@ -136,7 +136,7 @@
                             class="block text-sm font-medium text-gray-700">{{ __('Car Color') }}</label>
                         <input type="text" name="car_color" id="car_color" placeholder="{{ __('Car Color') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('car_color', $car->car_color) }}" disabled />
+                            value="{{ old('car_color', $car->car_color) }}" readonly />
                         <x-input-error :messages="$errors->get('car_color')" class="mt-2" />
                     </div>
                     <div class="mb-4">
@@ -145,7 +145,7 @@
                         <input type="number" name="car_price" id="car_price"
                             placeholder="{{ __('Enter Car Price') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('car_price', $car->car_price) }}" disabled />
+                            value="{{ old('car_price', $car->car_price) }}" readonly />
                         <x-input-error :messages="$errors->get('car_price')" class="mt-2" />
                     </div>
                     <div class="mb-4">
@@ -154,7 +154,7 @@
                         <input type="text" name="car_mileage" id="car_mileage"
                             placeholder="{{ __('Car Mileage') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('car_mileage', $car->car_mileage) }}" disabled />
+                            value="{{ old('car_mileage', $car->car_mileage) }}" readonly />
                         <x-input-error :messages="$errors->get('car_mileage')" class="mt-2" />
                     </div>
                     <div class="mb-4">
@@ -163,7 +163,7 @@
                         <input type="text" name="year" id="year"
                             placeholder="{{ __('Car year of make') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('year', $car->year) }}" disabled />
+                            value="{{ old('year', $car->year) }}" readonly />
                         <x-input-error :messages="$errors->get('year')" class="mt-2" />
                     </div>
                     <div class="mb-4">
@@ -181,7 +181,7 @@
                         <input type="text" name="car_fuel" id="car_fuel"
                             placeholder="{{ __('Car Fuel Consumption') }}"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            value="{{ old('car_fuel', $car->car_fuel) }}" disabled />
+                            value="{{ old('car_fuel', $car->car_fuel) }}" readonly />
                         <x-input-error :messages="$errors->get('car_fuel')" class="mt-2" />
                     </div>
                     <div class="m-5 ml-0 text-2xl text-orange-900">
