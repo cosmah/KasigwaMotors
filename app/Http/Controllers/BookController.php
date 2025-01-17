@@ -93,6 +93,28 @@ class BookController extends Controller
         ]);
     }
 
+    public function summary()
+{
+    $bookings = Book::select('id', 'name', 'car_model', 'car_make', 'car_price', 'car_quantity')
+    ->get()
+    ->map(function ($booking, $index) {
+        $booking->index = $index + 1; // Add the index dynamically
+        $booking->total_cost = $booking->car_price * $booking->car_quantity; // Calculate total cost
+        return $booking;
+    });
+
+
+    return view('summary', compact('bookings'));
+}
+
+public function showDetails($id)
+{
+    $booking = Book::findOrFail($id);
+
+    return view('bookingdetails', compact('booking'));
+}
+
+
     /**
      * Show the form for editing the specified resource.
      */

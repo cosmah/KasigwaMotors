@@ -35,12 +35,14 @@ Route::get('/hire', function () {
 // });
 
 Route::get('/purchase/{id}', [
-    CarController::class, 'showPurchaseForm'
-    ])->name('purchase');
+    CarController::class,
+    'showPurchaseForm'
+])->name('purchase');
 
 Route::get('/hiring/{id}', [
-    HiringController::class, 'showHiringForm'
-    ])->name('hiring');
+    HiringController::class,
+    'showHiringForm'
+])->name('hiring');
 
 Route::get('/sales', function () {
     $cars = Car::all();
@@ -100,6 +102,10 @@ Route::resource(('books'), BookController::class)
 Route::resource(('hirings'), HiringController::class)
     ->only(['hiring', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
+
+// Add this new route for handling the summary page
+Route::get('/summary', [BookController::class, 'summary'])->name('summary');
+Route::get('/bookings/{id}', [BookController::class, 'showDetails'])->name('bookings.bookingdetails');
 
 
 require __DIR__ . '/auth.php';
