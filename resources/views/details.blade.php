@@ -88,17 +88,22 @@
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
                             <img src="{{ asset('images/desc.svg') }} " class="w-8 h-auto mr-2" />
-                            {{ $car->description }}
+                            {{ $car->car_color }}
 
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
                             <img src="{{ asset('images/fuel.svg') }} " class="w-8 h-auto mr-2" />
-                            {{ $car->fuel }}
+                            {{ $car->car_fuel }} km/l
 
                         </p>
                         <p class="mt-2 text-lg text-gray-600 flex items-center">
                             <img src="{{ asset('images/mile.svg') }} " class="w-8 h-auto mr-2" />
-                            {{ $car->mileage }}
+                            {{ $car->car_mileage }} KM
+
+                        </p>
+                        <p class="mt-2 text-lg text-gray-600 flex items-center">
+                            <img src="{{ asset('images/desc.svg') }} " class="w-8 h-auto mr-2" />
+                            UGX. {{ $car->car_price }}
 
                         </p>
                     </div>

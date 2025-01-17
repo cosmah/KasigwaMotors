@@ -63,6 +63,10 @@ class CarController extends Controller
             'car_make' => 'required|string|max:255',
             'year' => 'required|integer|min:1900|max:2024',
             'images' => 'required|array|min:1|max:5',
+            'car_color' => 'required|string|max:255',
+            'car_price' => 'required|integer|max:2550000000',
+            'car_mileage' => 'required|string|max:255',
+            'car_fuel' => 'required|string|max:255',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
@@ -79,6 +83,10 @@ class CarController extends Controller
             'car_model' => $validated['car_model'],
             'car_make' => $validated['car_make'],
             'year' => $validated['year'],
+            'car_color' => $validated['car_color'],
+            'car_price' => $validated['car_price'],
+            'car_mileage' => $validated['car_mileage'],
+            'car_fuel'=> $validated['car_fuel'],
             'images' => $imagePaths
         ]);
 
@@ -121,6 +129,11 @@ class CarController extends Controller
             'images' => 'nullable|array|max:5',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'message' => 'nullable|string',
+            'car_color' => 'required|string|max:255',
+            'car_price' => 'required|integer|max:2550000000',
+            'car_mileage' => 'required|string|max:255',
+            'car_quantity' => 'required|integer|max:255',
+            'car_fuel' => 'required|string|max:255',
         ]);
 
         $imagePaths = $car->images ?? [];
@@ -136,6 +149,10 @@ class CarController extends Controller
             'car_make' => $validated['car_make'],
             'year' => $validated['year'],
             'images' => $imagePaths,
+            'car_color' => $validated['car_color'],
+            'car_price' => $validated['car_price'],
+            'car_mileage' => $validated['car_mileage'],
+            'car_fuel'=> $validated['car_fuel'],
             'message' => $validated['message'] ?? $car->message,
         ]);
 
