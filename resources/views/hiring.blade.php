@@ -18,42 +18,71 @@
     @endif
 </head>
 
-<body class="font-sans antialiased ">
-    <div class="">
-        <header class="bg-white">
-            <nav class="flex justify-between items-center w-full px-4">
-                <!-- Logo -->
-                <div>
-                    <img src="{{ asset('images/logo.png') }}" alt="Kasigwa Motors Uganda" class="w-auto h-auto" />
-                </div>
+<body class="font-sans antialiased">
+    <div class="topnav">
 
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex space-x-4">
-                    <a href="/" class="nav-link active hover:text-gray-700">Home</a>
-                    <a href="/sales" class="nav-link hover:text-gray-700">Cars for Sale</a>
-                    <a href="/hire" class="nav-link hover:text-gray-700">Hire a Car</a>
-                    <a href="/about" class="nav-link hover:text-gray-700">About Us</a>
-                    <a href="/contact" class="nav-link hover:text-gray-700">Contact Us</a>
-                </div>
+        <div class="flex justify-center">
+            <!-- This can be your logo or brand name -->
+            <img src="path_to_logo.png" alt="Kasigwa Motors Logo" class="h-auto">
+        </div>
 
-                <!-- Mobile Menu Button - Now part of the same flex container -->
-                <button id="menuButton" class="block md:hidden text-orange-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+        @if (Route::has('login'))
+            <nav class="flex justify-end ">
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="text-black">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="text-black">
+                        Log in
+                    </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-black">
+                            Register
+                        </a>
+                    @endif
+                @endauth
             </nav>
+        @endif
 
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden px-4 py-2">
-                <a href="/" class="nav-link active block py-2 hover:text-gray-700">Home</a>
-                <a href="/sales" class="nav-link block py-2 hover:text-gray-700">Cars for Sale</a>
-                <a href="/hire" class="nav-link block py-2 hover:text-gray-700">Hire a Car</a>
-                <a href="/about" class="nav-link block py-2 hover:text-gray-700">About Us</a>
-                <a href="/contact" class="nav-link block py-2 hover:text-gray-700">Contact Us</a>
+    </div>
+
+    <header class="bg-white">
+        <nav class="flex justify-between items-center w-full px-4">
+            <!-- Logo -->
+            <div>
+                <a href="/">
+                    <img src="{{ asset('images/logo.png') }}" alt="Kasigwa Motors Uganda" class="w-auto h-auto" />
+                </a>
             </div>
-        </header>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-4">
+                <a href="/" class="nav-link active hover:text-gray-700">Home</a>
+                <a href="/sales" class="nav-link hover:text-gray-700">Cars for Sale</a>
+                <a href="/hire" class="nav-link hover:text-gray-700">Hire a Car</a>
+                <a href="/about" class="nav-link hover:text-gray-700">About Us</a>
+                <a href="/contact" class="nav-link hover:text-gray-700">Contact Us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuButton" class="block md:hidden text-orange-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 py-2">
+            <a href="/" class="nav-link active block py-2 hover:text-gray-700">Home</a>
+            <a href="/sales" class="nav-link block py-2 hover:text-gray-700">Cars for Sale</a>
+            <a href="/hire" class="nav-link block py-2 hover:text-gray-700">Hire a Car</a>
+            <a href="/about" class="nav-link block py-2 hover:text-gray-700">About Us</a>
+            <a href="/contact" class="nav-link block py-2 hover:text-gray-700">Contact Us</a>
+        </div>
+    </header>
 
 
 

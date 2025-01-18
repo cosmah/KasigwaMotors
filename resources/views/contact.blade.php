@@ -4,39 +4,85 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us - Kasigwa Motors Uganda</title>
+
+    <title>Kasigwa Motors Uganda</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Styles / Scripts -->
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+    @endif
 </head>
 
-<body class="font-sans antialiased bg-gray-50 text-gray-900">
-    <div>
-        <header class="bg-white shadow-md">
-            <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-                <!-- Logo -->
-                <div>
-                    <img src="{{ asset('images/logo.png') }}" alt="Kasigwa Motors Uganda" class="h-10" />
-                </div>
+<body class="font-sans antialiased">
+    <div class="topnav">
 
-                <!-- Navigation Links -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="/" class="hover:text-orange-600">Home</a>
-                    <a href="/sales" class="hover:text-orange-600">Cars for Sale</a>
-                    <a href="/hire" class="hover:text-orange-600">Hire a Car</a>
-                    <a href="/about" class="hover:text-orange-600">About Us</a>
-                    <a href="/contact" class="text-orange-600 font-semibold">Contact Us</a>
-                </div>
+        <div class="flex justify-center">
+            <!-- This can be your logo or brand name -->
+            <img src="path_to_logo.png" alt="Kasigwa Motors Logo" class="h-auto">
+        </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="menuButton" class="block md:hidden text-orange-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+        @if (Route::has('login'))
+            <nav class="flex justify-end ">
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="text-black">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="text-black">
+                        Log in
+                    </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-black">
+                            Register
+                        </a>
+                    @endif
+                @endauth
             </nav>
-        </header>
+        @endif
+
+    </div>
+
+    <header class="bg-white">
+        <nav class="flex justify-between items-center w-full px-4">
+            <!-- Logo -->
+            <div>
+                <a href="/">
+                    <img src="{{ asset('images/logo.png') }}" alt="Kasigwa Motors Uganda" class="w-auto h-auto" />
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-4">
+                <a href="/" class="nav-link hover:text-gray-700">Home</a>
+                <a href="/sales" class="nav-link hover:text-gray-700">Cars for Sale</a>
+                <a href="/hire" class="nav-link hover:text-gray-700">Hire a Car</a>
+                <a href="/about" class="nav-link hover:text-gray-700">About Us</a>
+                <a href="/contact" class="nav-link active hover:text-gray-700">Contact Us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuButton" class="block md:hidden text-orange-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 py-2">
+            <a href="/" class="nav-link block py-2 hover:text-gray-700">Home</a>
+            <a href="/sales" class="nav-link block py-2 hover:text-gray-700">Cars for Sale</a>
+            <a href="/hire" class="nav-link block py-2 hover:text-gray-700">Hire a Car</a>
+            <a href="/about" class="nav-link block py-2 hover:text-gray-700">About Us</a>
+            <a href="/contact" class="nav-link active block py-2 hover:text-gray-700">Contact Us</a>
+        </div>
+    </header>
 
         <!-- Hero Section -->
         <section class="relative bg-cover bg-center h-30 md:h-96"
@@ -143,14 +189,14 @@
                     <!-- Contact Info -->
                     <div class="w-full md:w-1/3">
                         <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
-                        <p class="text-gray-400">1234 Street Name, City, Country</p>
+                        <p class="text-gray-400">Nakawa, Kampala, Uganda</p>
                         <p class="text-gray-400 mt-2">Phone: +256 123 456 789</p>
                         <p class="text-gray-400 mt-2">Email: info@kasigwamotors.com</p>
                     </div>
                 </div>
 
                 <div class="mt-8 border-t border-gray-700 pt-4 text-center">
-                    <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved.</p>
+                    <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved. | <a href="https://cosmah.netlify.app/">Powered By Mark Viral Tech</a></p>
                 </div>
             </footer>
         </div>

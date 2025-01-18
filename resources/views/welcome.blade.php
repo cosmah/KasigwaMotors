@@ -52,7 +52,9 @@
         <nav class="flex justify-between items-center w-full px-4">
             <!-- Logo -->
             <div>
-                <img src="{{ asset('images/logo.png') }}" alt="Kasigwa Motors Uganda" class="w-auto h-auto" />
+                <a href="/">
+                    <img src="{{ asset('images/logo.png') }}" alt="Kasigwa Motors Uganda" class="w-auto h-auto" />
+                </a>
             </div>
 
             <!-- Desktop Navigation Links -->
@@ -141,7 +143,8 @@
 
     <div class="whatsapp fixed bottom-4 right-4 z-50">
         <a href="https://wa.me/256783299472" target="_blank">
-            <img src="images/whatsapp.svg" alt="Whatsapp Logo" class="w-16 h-14 shadow-lg rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110">
+            <img src="images/whatsapp.svg" alt="Whatsapp Logo"
+                class="w-16 h-14 shadow-lg rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110">
         </a>
     </div>
     <div class="footer bg-gray-900 text-white py-8">
@@ -150,13 +153,14 @@
                 <!-- Company Info -->
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
                     <div class="footer-logo mb-4">
-                        <img src="{{ asset('images/logo2.png') }}" alt="Kasigwa Motors Uganda" class="w-24 h-auto mx-auto md:mx-0" />
-                    </div>        
+                        <img src="{{ asset('images/logo2.png') }}" alt="Kasigwa Motors Uganda"
+                            class="w-24 h-auto mx-auto md:mx-0" />
+                    </div>
                     <h3 class="text-2xl font-bold mb-4">Kasigwa Motors Uganda</h3>
                     <p class="text-gray-400">Your Trusted Partner in Car Sales and Hiring</p>
                     <p class="text-gray-400 mt-2">Walk In, Drive Out</p>
                 </div>
-    
+
                 <!-- Quick Links -->
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
                     <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
@@ -168,7 +172,7 @@
                         <li class="mb-2"><a href="/contact" class="hover:text-gray-300">Contact Us</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Contact Info -->
                 <div class="w-full md:w-1/3">
                     <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
@@ -177,9 +181,9 @@
                     <p class="text-gray-400 mt-2">Email: info@kasigwamotors.com</p>
                 </div>
             </div>
-    
+
             <div class="mt-8 border-t border-gray-700 pt-4 text-center">
-                <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved.</p>
+                <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved. | <a href="https://cosmah.netlify.app/">Powered By Mark Viral Tech</a></p>
             </div>
         </footer>
     </div>
