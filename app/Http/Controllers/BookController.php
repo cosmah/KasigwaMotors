@@ -53,8 +53,7 @@ class BookController extends Controller
 
         $request->user()->books()->create($validated);
 
-        return redirect(route('dashboard'))
-            ->with('success', 'Your purchase has been successfully processed!');
+        return redirect(route('welcome'));
     }
 
     /**

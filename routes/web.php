@@ -12,7 +12,8 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     $cars = Car::all();
     return view('welcome', ['cars' => $cars]);
-});
+})->name('welcome');
+
 
 Route::get('/list', function () {
     $cars = Car::all();
