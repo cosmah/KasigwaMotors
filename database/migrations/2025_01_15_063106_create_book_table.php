@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('car_mileage');
             $table->string('car_quantity');
             $table->string('car_fuel');
-            $table->string('car_fuel');
             $table->string('message');
             $table->timestamps();
         });

@@ -190,8 +190,8 @@
                     <div class="w-full md:w-1/3">
                         <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
                         <p class="text-gray-400">Nakawa, Kampala, Uganda</p>
-                        <p class="text-gray-400 mt-2">Phone: +256 123 456 789</p>
-                        <p class="text-gray-400 mt-2">Email: info@kasigwamotors.com</p>
+                        <p class="text-gray-400 mt-2">Phone: +256 783299472, 0200912440</p>
+                        <p class="text-gray-400 mt-2">Email: info@kasigwamotorsug.com</p>
                     </div>
                 </div>
 
