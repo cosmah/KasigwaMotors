@@ -29,8 +29,8 @@
         @if (Route::has('login'))
             <nav class="flex justify-end ">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="text-black">
-                        Dashboard
+                    <a href="{{ url('/contact') }}" class="text-black">
+                        Contact Us
                     </a>
                 @else
                     <a href="{{ route('login') }}" class="text-black">
@@ -84,71 +84,73 @@
         </div>
     </header>
 
-        <main class="about-main py-16 bg-gray-50">
-            <div class="about-us max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <!-- Header Section -->
-                <div class="text-center mb-12">
-                    <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
-                        About <span class="text-orange-600">Kasigwa Motors</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mt-4">
-                        Drive In, Walk Out
+    <main class="about-main py-16 bg-gray-50">
+        <div class="about-us max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                    About <span class="text-orange-600">Kasigwa Motors</span>
+                </h1>
+                <p class="text-lg text-gray-600 mt-4">
+                    Drive In, Walk Out
+                </p>
+            </div>
+
+            <!-- Content Section -->
+            <div class="about-content grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Text Content -->
+                <div class="text-content space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Kasigwa Motors Uganda is a trusted car sales and hire company with decades of experience in
+                        delivering quality vehicles to satisfied clients.
                     </p>
-                </div>
-        
-                <!-- Content Section -->
-                <div class="about-content grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <!-- Text Content -->
-                    <div class="text-content space-y-6">
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Kasigwa Motors Uganda is a trusted car sales and hire company with decades of experience in
-                            delivering quality vehicles to satisfied clients.
-                        </p>
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Whether you're looking to buy or rent, our diverse fleet is meticulously maintained and
-                            regularly serviced to meet your needs. We prioritize safety, reliability, and customer satisfaction
-                            in every interaction.
-                        </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Whether you're looking to buy or rent, our diverse fleet is meticulously maintained and
+                        regularly serviced to meet your needs. We prioritize safety, reliability, and customer
+                        satisfaction
+                        in every interaction.
+                    </p>
 
-                        <div class="mt-2 bg-white rounded-xl shadow-md">
-                            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Our Mission</h2>
-                            <p class="text-center text-lg text-gray-600 leading-relaxed">
-                                At Kasigwa Motors, we aim to provide our clients with exceptional service and high-quality vehicles,
-                                ensuring a smooth and reliable experience every time. Your journey is our priority.
-                            </p>
-                        </div>
-                        <a href="/contact"
-                            class="inline-block bg-orange-600 text-white font-medium py-3 px-6 rounded-md shadow-md hover:bg-orange-700 transition duration-300">
-                            Contact Us
-                        </a>
+                    <div class="mt-2 bg-white rounded-xl shadow-md">
+                        <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Our Mission</h2>
+                        <p class="text-center text-lg text-gray-600 leading-relaxed">
+                            At Kasigwa Motors, we aim to provide our clients with exceptional service and high-quality
+                            vehicles,
+                            ensuring a smooth and reliable experience every time. Your journey is our priority.
+                        </p>
+                    </div>
+                    <a href="/contact"
+                        class="inline-block bg-orange-600 text-white font-medium py-3 px-6 rounded-md shadow-md hover:bg-orange-700 transition duration-300">
+                        Contact Us
+                    </a>
 
-                    </div>
-        
-                    <!-- Image Content -->
-                    <div class="image-content flex justify-center">
-                        <img src="{{ asset('images/234.png') }}" alt="Kasigwa Motors Uganda"
-                            class="max-w-full h-auto rounded-xl" />
-                    </div>
-                    
                 </div>
-        
-                <!-- Testimonials Section -->
-                <div>
-                    <h2>Testimonials</h2>
-                    <div class="services">
-                        <div class="service">
-                            <h3><strong>- Kwesiga Mark</strong></h3>
-                            <p>Kasigwa Motors provided me with the perfect car for my trip. Highly recommended!</p>
-                        </div>
-                        <div class="service">
-                            <h3>- Kato Smith</h3>
-                            <p>Smooth and professional service. I'll definitely return for future rentals!</p>
-                        </div>
+
+                <!-- Image Content -->
+                <div class="image-content flex justify-center">
+                    <img src="{{ asset('images/234.png') }}" alt="Kasigwa Motors Uganda"
+                        class="max-w-full h-auto rounded-xl" />
+                </div>
+
+            </div>
+
+            <!-- Testimonials Section -->
+            <div>
+                <h2>Testimonials</h2>
+                <div class="services">
+                    <div class="service">
+                        <h3><strong>- Kwesiga Mark</strong></h3>
+                        <p>Kasigwa Motors provided me with the perfect car for my trip. Highly recommended!</p>
+                    </div>
+                    <div class="service">
+                        <h3>- Kato Smith</h3>
+                        <p>Smooth and professional service. I'll definitely return for future rentals!</p>
                     </div>
                 </div>
             </div>
-        </main>
-        
+        </div>
+    </main>
+
 
     </div>
 
@@ -195,7 +197,8 @@
             </div>
 
             <div class="mt-8 border-t border-gray-700 pt-4 text-center">
-                <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved. | <a href="https://cosmah.netlify.app/">Powered By Mark Viral Tech</a></p>
+                <p class="text-gray-500">&copy; 2025 Kasigwa Motors Uganda. All rights reserved. | <a
+                        href="https://cosmah.netlify.app/">Powered By Mark Viral Tech</a></p>
             </div>
         </footer>
     </div>

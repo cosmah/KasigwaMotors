@@ -29,8 +29,8 @@
         @if (Route::has('login'))
             <nav class="flex justify-end ">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="text-black">
-                        Dashboard
+                    <a href="{{ url('/contact') }}" class="text-black">
+                        Contact Us
                     </a>
                 @else
                     <a href="{{ route('login') }}" class="text-black">
